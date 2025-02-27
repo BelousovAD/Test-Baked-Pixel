@@ -1,10 +1,10 @@
 ﻿namespace TestBakedPixel.Slots.Controller
 {
     using System.Collections.Generic;
-    using TestBakedPixel.Inventory.Controller;
     using TestBakedPixel.Inventory.Model;
     using TestBakedPixel.Slots.View;
     using UnityEngine;
+    using Zenject;
 
     /// <summary>
     /// Спавнер отображений слотов в инвентаре
@@ -12,9 +12,6 @@
     public class SlotViewSpawner : MonoBehaviour
     {
         #region Properties
-
-        [SerializeField]
-        protected InventoryModelInitializer inventoryModelInitializer = default;
 
         [SerializeField]
         protected RectTransform parentForSpawnedItems = default;
@@ -44,23 +41,9 @@
 
         #region Methods
 
-        protected virtual void OnEnable()
-        {
-            inventoryModelInitializer.onInventoryModelInited += OnInventoryModelInited;
-            if (inventoryModelInitializer.InventoryModel != null)
-            {
-                OnInventoryModelInited();
-            }
-        }
-
-        protected virtual void OnDisable()
-            => inventoryModelInitializer.onInventoryModelInited -= OnInventoryModelInited;
-
-        protected virtual void OnInventoryModelInited()
-        {
-            InventoryModel = inventoryModelInitializer.InventoryModel;
-            inventoryModelInitializer.onInventoryModelInited -= OnInventoryModelInited;
-        }
+        [Inject]
+        protected virtual void Construct(InventoryModel inventoryModel)
+            => InventoryModel = inventoryModel;
 
         protected virtual void SpawnItems()
         {
