@@ -53,6 +53,9 @@
         protected virtual void Awake()
             => _image = GetComponent<Image>();
 
+        protected virtual void OnEnable()
+            => UpdateView();
+
         protected virtual void OnDestroy()
             => ItemModel = null;
 
