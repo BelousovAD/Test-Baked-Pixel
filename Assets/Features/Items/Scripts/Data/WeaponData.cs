@@ -1,6 +1,7 @@
 ﻿namespace TestBakedPixel.Items.Data
 {
     using System.Collections.Generic;
+    using TestBakedPixel.Common;
     using UnityEngine;
 
     /// <summary>
@@ -21,9 +22,9 @@
         /// <summary>
         /// Список используемых патронов
         /// </summary>
-        public List<AmmoData> UsingAmmo => _usingAmmo;
+        public List<StringSO> UsingAmmoIds => _usingAmmoIds;
         [SerializeField]
-        private List<AmmoData> _usingAmmo = new List<AmmoData>();
+        private List<StringSO> _usingAmmoIds = new List<StringSO>();
 
         #endregion
     }

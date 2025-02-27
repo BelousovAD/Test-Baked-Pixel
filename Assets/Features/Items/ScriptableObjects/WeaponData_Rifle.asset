@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: WeaponData_Rifle
   m_EditorClassIdentifier: 
   _itemId: {fileID: 11400000, guid: 83b08111bed2927479ef2d11f926b802, type: 2}
-  _itemIcon: {fileID: 0}
+  _itemIcon: {fileID: 21300000, guid: bcc99a0b53b26dc469cc24d492867ac0, type: 3}
   _maxStackCount: 1
   _unitWeight: 5
   _damage: 20
-  _usingAmmo:
-  - {fileID: 11400000, guid: 24ac9b9defb42f943887bf4cb5fbfdf9, type: 2}
+  _usingAmmoIds:
+  - {fileID: 11400000, guid: 4967cc017460d3e4cac01fc917b3aeac, type: 2}
