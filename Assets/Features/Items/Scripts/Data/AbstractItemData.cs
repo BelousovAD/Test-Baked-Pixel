@@ -1,4 +1,4 @@
-﻿namespace TestBakedPixel.Data
+﻿namespace TestBakedPixel.Items.Data
 {
     using TestBakedPixel.Common;
     using UnityEngine;
@@ -21,7 +21,7 @@
         /// Иконка предмета
         /// </summary>
         public Sprite ItemIcon => _itemIcon;
-        [SerializeField, Min(1)]
+        [SerializeField]
         private Sprite _itemIcon = default;
 
         /// <summary>
@@ -35,7 +35,7 @@
         /// Вес единицы предмета
         /// </summary>
         public float UnitWeight => _unitWeight;
-        [SerializeField, Min(0)]
+        [SerializeField, Min(0f)]
         private float _unitWeight = 1f;
 
         #endregion

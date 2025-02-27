@@ -1,11 +1,11 @@
-﻿namespace TestBakedPixel.Data
+﻿namespace TestBakedPixel.Items.Data
 {
     using UnityEngine;
 
     /// <summary>
     /// Данные жилета
     /// </summary>
-    [CreateAssetMenu(fileName = nameof(ArmorData), menuName = "TestBakedPixel/Features/Data/New " + nameof(ArmorData))]
+    [CreateAssetMenu(fileName = nameof(ArmorData), menuName = "TestBakedPixel/Features/Items/Data/New " + nameof(ArmorData))]
     public class ArmorData : AbstractItemData
     {
         #region Properties

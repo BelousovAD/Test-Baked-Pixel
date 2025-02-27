@@ -1,4 +1,4 @@
-﻿namespace TestBakedPixel.Data
+﻿namespace TestBakedPixel.Items.Data
 {
     using System.Collections.Generic;
     using UnityEngine;
@@ -6,7 +6,7 @@
     /// <summary>
     /// Данные оружия
     /// </summary>
-    [CreateAssetMenu(fileName = nameof(WeaponData), menuName = "TestBakedPixel/Features/Data/New " + nameof(WeaponData))]
+    [CreateAssetMenu(fileName = nameof(WeaponData), menuName = "TestBakedPixel/Features/Items/Data/New " + nameof(WeaponData))]
     public class WeaponData : AbstractItemData
     {
         #region Properties
