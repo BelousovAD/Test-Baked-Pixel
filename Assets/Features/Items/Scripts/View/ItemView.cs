@@ -13,7 +13,7 @@
         #region Properties
 
         [SerializeField]
-        private Sprite _emptySprite = default;
+        private Sprite _defaultIcon = default;
         [SerializeField]
         private Text _itemCountField = default;
 
@@ -65,7 +65,7 @@
             {
                 _image.sprite = ItemModel != null
                     ? ItemModel.ItemIcon
-                    : _emptySprite;
+                    : _defaultIcon;
                 _itemCountField.text = ItemModel != null && ItemModel.StackCount > 1
                     ? ItemModel.StackCount.ToString()
                     : string.Empty;
