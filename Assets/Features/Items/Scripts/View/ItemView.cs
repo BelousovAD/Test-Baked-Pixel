@@ -1,0 +1,74 @@
+﻿namespace TestBakedPixel.Items.View
+{
+    using TestBakedPixel.Items.Model;
+    using UnityEngine;
+    using UnityEngine.UI;
+
+    /// <summary>
+    /// Отображение предмета в инвентаре
+    /// </summary>
+    [RequireComponent(typeof(Image))]
+    public class ItemView : MonoBehaviour
+    {
+        #region Properties
+
+        [SerializeField]
+        private Sprite _emptySprite = default;
+        [SerializeField]
+        private Text _itemCountField = default;
+
+        /// <summary>
+        /// Предмет в инвентаре
+        /// </summary>
+        public ItemModel ItemModel
+        {
+            protected get => _itemModel;
+            set
+            {
+                if (value != ItemModel)
+                {
+                    if (ItemModel != null)
+                    {
+                        _itemModel.onStackCountChanged -= UpdateView;
+                    }
+
+                    _itemModel = value;
+
+                    if (ItemModel != null)
+                    {
+                        ItemModel.onStackCountChanged += UpdateView;
+                        UpdateView();
+                    }
+                }
+            }
+        }
+        private ItemModel _itemModel = default;
+
+        private Image _image = default;
+
+        #endregion
+
+        #region Methods
+
+        protected virtual void Awake()
+            => _image = GetComponent<Image>();
+
+        protected virtual void OnDestroy()
+            => ItemModel = null;
+
+        protected virtual void UpdateView()
+        {
+            if (isActiveAndEnabled)
+            {
+                _image.sprite = ItemModel != null
+                    ? ItemModel.ItemIcon
+                    : _emptySprite;
+                _itemCountField.text = ItemModel != null && ItemModel.StackCount > 1
+                    ? ItemModel.StackCount.ToString()
+                    : string.Empty;
+            }
+        }
+
+        #endregion
+    }
+}
