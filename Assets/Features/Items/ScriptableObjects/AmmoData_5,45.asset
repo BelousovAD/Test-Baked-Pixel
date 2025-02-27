@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe1a5b75277b61642b22aab771af3596, type: 3}
+  m_Name: AmmoData_5,45
+  m_EditorClassIdentifier: 
+  _itemId: {fileID: 11400000, guid: 671ec0416cf959c4180199d1e8960830, type: 2}
+  _itemIcon: {fileID: 0}
+  _maxStackCount: 30
+  _unitWeight: 0.01
