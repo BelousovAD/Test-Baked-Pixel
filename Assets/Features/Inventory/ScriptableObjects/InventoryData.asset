@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cde92f69f1657bf47b187e0c8c4073d7, type: 3}
+  m_Name: InventoryData
+  m_EditorClassIdentifier: 
+  _defaultSlotDatas:
+  - _isLocked: 0
+    _costToUnlock: 0
+  - _isLocked: 0
+    _costToUnlock: 0
+  - _isLocked: 0
+    _costToUnlock: 0
+  - _isLocked: 0
+    _costToUnlock: 0
+  - _isLocked: 0
+    _costToUnlock: 0
+  - _isLocked: 0
+    _costToUnlock: 0
+  - _isLocked: 0
+    _costToUnlock: 0
+  - _isLocked: 0
+    _costToUnlock: 0
+  - _isLocked: 0
+    _costToUnlock: 0
+  - _isLocked: 0
+    _costToUnlock: 0
+  - _isLocked: 0
+    _costToUnlock: 0
+  - _isLocked: 0
+    _costToUnlock: 0
+  - _isLocked: 0
+    _costToUnlock: 0
+  - _isLocked: 0
+    _costToUnlock: 0
+  - _isLocked: 0
+    _costToUnlock: 0
+  - _isLocked: 1
+    _costToUnlock: 100
+  - _isLocked: 1
+    _costToUnlock: 200
+  - _isLocked: 1
+    _costToUnlock: 300
+  - _isLocked: 1
+    _costToUnlock: 400
+  - _isLocked: 1
+    _costToUnlock: 500
+  - _isLocked: 1
+    _costToUnlock: 600
+  - _isLocked: 1
+    _costToUnlock: 700
+  - _isLocked: 1
+    _costToUnlock: 800
+  - _isLocked: 1
+    _costToUnlock: 900
+  - _isLocked: 1
+    _costToUnlock: 1000
+  - _isLocked: 1
+    _costToUnlock: 2000
+  - _isLocked: 1
+    _costToUnlock: 3000
+  - _isLocked: 1
+    _costToUnlock: 4000
+  - _isLocked: 1
+    _costToUnlock: 5000
+  - _isLocked: 1
+    _costToUnlock: 5000
