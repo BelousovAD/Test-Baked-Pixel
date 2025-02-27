@@ -36,8 +36,9 @@
                     if (ItemModel != null)
                     {
                         ItemModel.onStackCountChanged += UpdateView;
-                        UpdateView();
                     }
+                    
+                    UpdateView();
                 }
             }
         }
@@ -63,8 +64,9 @@
                 _itemCountField.text = ItemModel != null && ItemModel.StackCount > 1
                     ? ItemModel.StackCount.ToString()
                     : string.Empty;
-                _image.gameObject.SetActive(ItemModel != null);
             }
+            
+            _image.gameObject.SetActive(ItemModel != null);
         }
 
         #endregion
