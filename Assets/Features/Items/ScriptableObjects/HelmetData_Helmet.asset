@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: HelmetData_Helmet
   m_EditorClassIdentifier: 
   _itemId: {fileID: 11400000, guid: 18dc7121d5efafb4980ef93b70482984, type: 2}
-  _itemIcon: {fileID: 0}
+  _itemIcon: {fileID: 21300000, guid: feb4c14ef87e10f41b89945b244f0272, type: 3}
   _maxStackCount: 1
-  _weight: 1
+  _unitWeight: 1
   _protectionValue: 10

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ArmorData_Jacket
   m_EditorClassIdentifier: 
   _itemId: {fileID: 11400000, guid: 06da2e368ed49e94485b37ec74288969, type: 2}
-  _itemIcon: {fileID: 0}
+  _itemIcon: {fileID: 21300000, guid: c2a8e394e3d0cf54088b966eaa93abd5, type: 3}
   _maxStackCount: 1
-  _weight: 1
+  _unitWeight: 1
   _protectionValue: 3

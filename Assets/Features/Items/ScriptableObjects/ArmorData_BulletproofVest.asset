@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ArmorData_BulletproofVest
   m_EditorClassIdentifier: 
   _itemId: {fileID: 11400000, guid: 5b824878a84374b419fe4fe2c9308915, type: 2}
-  _itemIcon: {fileID: 0}
+  _itemIcon: {fileID: 21300000, guid: e978bae50ba4c6f43b92794cf574396b, type: 3}
   _maxStackCount: 1
-  _weight: 10
+  _unitWeight: 1
   _protectionValue: 10
