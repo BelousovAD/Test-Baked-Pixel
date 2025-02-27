@@ -7,13 +7,12 @@
     /// <summary>
     /// Отображение предмета в инвентаре
     /// </summary>
-    [RequireComponent(typeof(Image))]
     public class ItemView : MonoBehaviour
     {
         #region Properties
 
         [SerializeField]
-        private Sprite _defaultIcon = default;
+        private Image _image = default;
         [SerializeField]
         private Text _itemCountField = default;
 
@@ -44,14 +43,9 @@
         }
         private ItemModel _itemModel = default;
 
-        private Image _image = default;
-
         #endregion
 
         #region Methods
-
-        protected virtual void Awake()
-            => _image = GetComponent<Image>();
 
         protected virtual void OnEnable()
             => UpdateView();
@@ -65,10 +59,11 @@
             {
                 _image.sprite = ItemModel != null
                     ? ItemModel.ItemIcon
-                    : _defaultIcon;
+                    : null;
                 _itemCountField.text = ItemModel != null && ItemModel.StackCount > 1
                     ? ItemModel.StackCount.ToString()
                     : string.Empty;
+                _image.gameObject.SetActive(ItemModel != null);
             }
         }
 
