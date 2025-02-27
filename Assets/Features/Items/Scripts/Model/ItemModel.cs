@@ -44,6 +44,10 @@
         }
         private int _stackCount = 1;
 
+        /// <summary>
+        /// Данные предмета
+        /// </summary>
+        public AbstractItemData ItemData => _itemData;
         private AbstractItemData _itemData = default;
 
         #endregion
