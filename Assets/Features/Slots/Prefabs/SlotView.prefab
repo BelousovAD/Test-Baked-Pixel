@@ -11,7 +11,11 @@ GameObject:
   - component: {fileID: 7247368385534157621}
   - component: {fileID: 8133251723672420200}
   - component: {fileID: 2928198370874192781}
+  - component: {fileID: 8752456779517460683}
+  - component: {fileID: 1877610354872806945}
   - component: {fileID: 1032568807254191423}
+  - component: {fileID: 2160751081831785873}
+  - component: {fileID: 751279752181800660}
   m_Layer: 5
   m_Name: SlotView
   m_TagString: Untagged
@@ -78,6 +82,31 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8752456779517460683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103374282693116648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbbe31ee4228b804b8528de0422cff9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1877610354872806945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103374282693116648}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea6dd5e0bf41a0408f5c063feb863aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slotModelProvider: {fileID: 8752456779517460683}
 --- !u!114 &1032568807254191423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,10 +121,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectsToEnable:
   - {fileID: 4531265048705434815}
-  objectsToDisable:
-  - {fileID: 2160933460834435706}
-  _itemView: {fileID: 5974339640913439113}
+  objectsToDisable: []
+  _slotModelProvider: {fileID: 8752456779517460683}
   _costToUnlockField: {fileID: 8484815968000478885}
+--- !u!114 &2160751081831785873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103374282693116648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd68a78c970ecca4b8670fe8a1c52288, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slotModelProvider: {fileID: 8752456779517460683}
+--- !u!114 &751279752181800660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103374282693116648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1f5403c94854fe428bcb17fc24e7c47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _image: {fileID: 4583516562842297492}
+  _itemCountField: {fileID: 7676339740051784313}
+  _itemModelProvider: {fileID: 2160751081831785873}
 --- !u!1 &2160933460834435706
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,7 +163,7 @@ GameObject:
   - component: {fileID: 4692714054160083144}
   - component: {fileID: 4779448381620572633}
   - component: {fileID: 4583516562842297492}
-  - component: {fileID: 5974339640913439113}
+  - component: {fileID: 585368599341160484}
   m_Layer: 5
   m_Name: ItemView
   m_TagString: Untagged
@@ -173,7 +229,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5974339640913439113
+--- !u!114 &585368599341160484
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -182,11 +238,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2160933460834435706}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f5403c94854fe428bcb17fc24e7c47, type: 3}
+  m_Script: {fileID: 11500000, guid: 57b5d8bee00b93e4284adbad2ea7c77e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _image: {fileID: 4583516562842297492}
-  _itemCountField: {fileID: 7676339740051784313}
+  _slotModelProvider: {fileID: 8752456779517460683}
 --- !u!1 &2358952770591931412
 GameObject:
   m_ObjectHideFlags: 0

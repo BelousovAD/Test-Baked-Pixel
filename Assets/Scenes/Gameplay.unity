@@ -1141,7 +1141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentForSpawnedItems: {fileID: 921582750}
-  prefabForSpawn: {fileID: 1032568807254191423, guid: 10500d04070dd2344a695f8701d371e2, type: 3}
+  prefabForSpawn: {fileID: 8752456779517460683, guid: 10500d04070dd2344a695f8701d371e2, type: 3}
 --- !u!1 &1123446666
 GameObject:
   m_ObjectHideFlags: 0

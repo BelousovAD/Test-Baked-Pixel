@@ -99,6 +99,33 @@
             }
         }
 
+        /// <summary>
+        /// Объединить слоты
+        /// </summary>
+        /// <param name="from">Исходный слот</param>
+        /// <param name="to">Целевой слот</param>
+        public void StackSlots(SlotModel from, SlotModel to)
+        {
+            if (to.Item == null)
+            {
+                to.Item = from.Item;
+                from.Item = null;
+            }
+            else if (from.Item.ItemId == to.Item.ItemId)
+            {
+                int overflow = to.Item.TryAdd(from.Item.StackCount);
+
+                if (overflow == 0)
+                {
+                    from.Item = null;
+                }
+                else
+                {
+                    from.Item.TryRemove(from.Item.StackCount - overflow);
+                }
+            }
+        }
+
         protected SlotModel GetFirstEmptySlot()
             => SlotModels.Find(x => !x.IsLocked && x.Item == null);
 

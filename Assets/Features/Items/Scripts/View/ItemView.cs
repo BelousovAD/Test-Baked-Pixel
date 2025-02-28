@@ -15,20 +15,19 @@
         private Image _image = default;
         [SerializeField]
         private Text _itemCountField = default;
+        [SerializeField]
+        private ItemModelProvider _itemModelProvider = default;
 
-        /// <summary>
-        /// Предмет в инвентаре
-        /// </summary>
-        public ItemModel ItemModel
+        protected ItemModel ItemModel
         {
-            protected get => _itemModel;
+            get => _itemModel;
             set
             {
                 if (value != ItemModel)
                 {
                     if (ItemModel != null)
                     {
-                        _itemModel.onStackCountChanged -= UpdateView;
+                        ItemModel.onStackCountChanged -= UpdateView;
                     }
 
                     _itemModel = value;
@@ -48,11 +47,27 @@
 
         #region Methods
 
+        protected virtual void Start()
+        {
+            _itemModelProvider.onItemModelChanged += InitItemModel;
+
+            if (_itemModelProvider.ItemModel != null)
+            {
+                InitItemModel();
+            }
+        }
+
         protected virtual void OnEnable()
             => UpdateView();
 
         protected virtual void OnDestroy()
-            => ItemModel = null;
+        {
+            _itemModelProvider.onItemModelChanged -= InitItemModel;
+            ItemModel = null;
+        }
+
+        protected virtual void InitItemModel()
+            => ItemModel = _itemModelProvider.ItemModel;
 
         protected virtual void UpdateView()
         {
