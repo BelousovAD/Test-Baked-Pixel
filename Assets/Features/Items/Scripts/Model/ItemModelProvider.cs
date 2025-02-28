@@ -1,22 +1,45 @@
-﻿namespace TestBakedPixel.Slots.View
+﻿namespace TestBakedPixel.Items
 {
-    using TestBakedPixel.GameObjects;
-    using TestBakedPixel.Items.View;
+    using System;
+    using TestBakedPixel.Items.Model;
     using TestBakedPixel.Slots.Model;
     using UnityEngine;
-    using UnityEngine.UI;
 
     /// <summary>
-    /// Отображение слота в инвентаре
+    /// Провайдер предмета в слоте
     /// </summary>
-    public class SlotView : ObjectSwitcher
+    public class ItemModelProvider : MonoBehaviour
     {
+        #region Events
+
+        /// <summary>
+        /// Изменён предмет в слоте
+        /// </summary>
+        public event Action onItemModelChanged = delegate { };
+
+        #endregion
+
         #region Properties
 
         [SerializeField]
         private SlotModelProvider _slotModelProvider = default;
-        [SerializeField]
-        private Text _costToUnlockField = default; 
+
+        /// <summary>
+        /// Предмет в слоте
+        /// </summary>
+        public ItemModel ItemModel
+        {
+            get => _itemModel;
+            protected set
+            {
+                if (value != ItemModel)
+                {
+                    _itemModel = value;
+                    onItemModelChanged();
+                }
+            }
+        }
+        private ItemModel _itemModel = default;
 
         protected SlotModel SlotModel
         {
@@ -27,17 +50,19 @@
                 {
                     if (SlotModel != null)
                     {
-                        SlotModel.onCostToUnlockChanged -= UpdateView;
-                        SlotModel.onLockedStatusChanged -= UpdateView;
+                        SlotModel.onItemChanged -= InitItemModel;
                     }
 
                     _slotModel = value;
 
                     if (SlotModel != null)
                     {
-                        SlotModel.onLockedStatusChanged += UpdateView;
-                        SlotModel.onCostToUnlockChanged += UpdateView;
-                        UpdateView();
+                        SlotModel.onItemChanged += InitItemModel;
+                        InitItemModel();
+                    }
+                    else
+                    {
+                        ItemModel = null;
                     }
                 }
             }
@@ -67,14 +92,8 @@
         protected virtual void InitSlotModel()
             => SlotModel = _slotModelProvider.SlotModel;
 
-        protected virtual void UpdateView()
-        {
-            if (isActiveAndEnabled)
-            {
-                _costToUnlockField.text = SlotModel.CostToUnlock.ToString();
-                SwitchObjects(SlotModel.IsLocked);
-            }
-        }
+        protected virtual void InitItemModel()
+            => ItemModel = SlotModel.Item;
 
         #endregion
     }

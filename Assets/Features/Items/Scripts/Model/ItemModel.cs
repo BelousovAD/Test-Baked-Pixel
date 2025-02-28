@@ -69,7 +69,9 @@
         {
             int overflow = StackCount + count - _itemData.MaxStackCount;
             StackCount += count;
-            return overflow;
+            return overflow < 0
+                ? 0
+                : overflow;
         }
 
         /// <summary>
